@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @post, notice: "Comment created successfully" }
+        flash.now[:notice] = "Comment created successfully"
+        format.html { redirect_to @post }
         format.js
       else
         format.html { render :new }
@@ -28,7 +29,8 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @post, notice: "Comment updated successfully" }
+        flash.now[:notice] = "Comment updated successfully"
+        format.html { redirect_to @post }
         format.js
       else
         format.html { render :edit }

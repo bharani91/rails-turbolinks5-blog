@@ -18,7 +18,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "Post created successfully" }
+        flash.now[:notice] = "Post created successfully"
+        format.html { redirect_to @post  }
         format.js
       else
         format.html { render :new }
@@ -35,7 +36,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: "Post updated successfully" }
+        flash.now[:notice] = "Post updated successfully"
+        format.html { redirect_to @post }
         format.js
       else
         format.html { render :edit }

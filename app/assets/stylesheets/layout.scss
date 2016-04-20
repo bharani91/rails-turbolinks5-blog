@@ -60,17 +60,28 @@ hr.spacer {
 
 
 @keyframes blink {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0.6;
-    }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+  }
 }
 
 @-webkit-keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.alert {
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+
+  &.alert-notice {
+    background: #DCDCFB;
+    border: 1px solid darken(#DCDCFB, 10%);
+  }
 }
