@@ -1,0 +1,26 @@
+<%= form_for post, html: { class: "js-post-form" }, remote: true, authenticity_token: true do |f| %>
+
+  <%= render "shared/errors", object: post %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <%= f.submit "Save" %>
+
+    <% unless post.new_record? %>
+      <%= link_to "Cancel", @post %>
+    <% end %>
+  </div>
+<% end %>

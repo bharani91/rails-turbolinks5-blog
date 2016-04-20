@@ -1,0 +1,35 @@
+<% content_for(:title) { @post.title } %>
+
+<%= render "shared/back_to_posts_header" %>
+
+
+<% cache(@post) do %>
+  <div class="post">
+    <h1><%= @post.title %></h1>
+    <div class="post-content">
+      <%= @post.content %>
+    </div>
+  </div>
+
+  <%= link_to "Edit", edit_post_path(@post), class: "btn" %>
+  <%= button_to "Delete", post_path(@post), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+
+<% if @comments %>
+  <% cache([@post, @comments]) do %>
+    <div class="comments">
+      <h3>Comments</h3>
+        <ul class="comment-list">
+          <% @comments.each do |comment| %>
+            <%= render "comments/comment", comment: comment, post: @post %>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+<% end %>
+
+
+<div class="add-comment">
+  <%= render "comments/form", post: @post, comment: Comment.new %>
+</div>

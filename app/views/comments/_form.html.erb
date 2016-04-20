@@ -1,0 +1,25 @@
+<h3>Add a new comment</h3>
+<%= form_for [post, comment], html: { class: "js-comment-form js-post-form"}, remote: true, authenticity_token: true do |f| %>
+
+  <%= render "shared/errors", object: comment %>
+
+
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Save" %>
+
+
+    <% if defined? show_cancel  %>
+        <%= link_to "Cancel", cancel_editing_post_comment_path(post, comment), class: "js-cancel-comment", remote: true %>
+    <% end %>
+
+
+  </div>
+
+
+
+
+<% end %>

@@ -1,0 +1,62 @@
+.btn, input[type="submit"], button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #eee;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: black;
+}
+
+form.button_to {
+  display: inline-block;
+}
+
+
+.form-group {
+  margin-bottom: 10px;
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"], textarea {
+    display: block;
+    width: 80%;
+    line-height: 1.5;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 3px 6px;
+    &:hover {
+      border-color: darken(#ccc, 5%);
+    }
+    &:focus {
+      border-color: #2A76F1;
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+}
+
+
+.validation-container {
+  .inner {
+    background: rgba(red, 0.1);
+    border: 1px solid rgba(red, 0.2);
+    padding: 10px;
+    margin: 10px 0;
+    width: 79.5%;
+    h3 {
+      margin: 0;
+    }
+  }
+}

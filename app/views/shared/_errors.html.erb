@@ -1,0 +1,14 @@
+<div class="validation-container">
+  <% if object.errors.any? %>
+  <div class="inner">
+    <h3>Errors</h3>
+    <ul>
+      <% object.errors.full_messages.each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</div>

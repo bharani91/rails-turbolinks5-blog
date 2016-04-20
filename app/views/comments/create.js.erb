@@ -1,0 +1,8 @@
+$(".add-comment .validation-container").empty();
+
+<% if @comment.errors.any? %>
+  $(".add-comment").html('<%=j render("form", post: @post, comment: @comment) %>');
+<% else %>
+  $(".comment-list").append("<%=j render 'comment', comment: @comment, post: @post %>");
+  $(".add-comment").html('<%=j render "comments/form", post: @post, comment: Comment.new %>');
+<% end %>

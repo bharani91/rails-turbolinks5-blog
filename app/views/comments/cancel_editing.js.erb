@@ -1,0 +1,2 @@
+var content = "<%=j render 'comment', comment: @comment, post: @post %>";
+$(".comment-list #comment-<%= @comment.id %>").html($(content).html());

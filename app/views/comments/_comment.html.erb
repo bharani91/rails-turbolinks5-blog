@@ -1,0 +1,11 @@
+<% cache [post, comment] do %>
+  <li id="comment-<%= comment.id %>">
+    <p>
+      <%= comment.content %>
+    </p>
+
+    <p>
+      <%= link_to "Edit", edit_post_comment_path(post, comment), remote: true, class: "edit" %>
+    </p>
+  </li>
+<% end %>

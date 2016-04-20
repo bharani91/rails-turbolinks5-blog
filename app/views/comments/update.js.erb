@@ -1,0 +1,10 @@
+var content = "<%=j render 'comment', comment: @comment, post: @post %>";
+
+var container = $(".comment-list #comment-<%= @comment.id %>");
+
+
+<% if @comment.errors.any? %>
+  container.html('<%=j render("form", post: @post, comment: @comment, show_cancel: true) %>');
+<% else %>
+  container.html($(content).html());
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Posts</h1>
+
+<%= link_to "New Post", new_post_path, class: "btn btn-lg" %>
+
+<% @posts.each do |post| %>
+<div class="post">
+  <h2>
+    <%= link_to post.title, post_path(post) %>
+  </h2>
+  <p>
+    <%= post.extract %>
+  </p>
+</div>
+<% end %>
+
+<%= paginate @posts %>

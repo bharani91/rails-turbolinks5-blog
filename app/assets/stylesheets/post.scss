@@ -1,0 +1,48 @@
+.field_with_errors {
+  input, textarea {
+    border: 1px solid red;
+  }
+}
+
+
+input[type='submit'].loading {
+  background: gray;
+}
+
+
+.post {
+  margin: 10px 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+
+  h2 {
+    margin: 10px 0;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}
+
+
+.posts.show {
+  .post {
+    border-bottom: none;
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  .add-comment {
+    padding: 20px;
+    border: 1px solid #eee;
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 10px;
+
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<% if @post.errors.any? %>
+  $(".new-post-form").html('<%=j render("form", post: @post) %>')
+<% else %>
+  Turbolinks.visit('<%= post_path(@post) %>')
+<% end %>
