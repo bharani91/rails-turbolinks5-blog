@@ -1,4 +1,9 @@
+<% if comment.new_record? %>
 <h3>Add a new comment</h3>
+<% else %>
+<h3>Edit comment</h3>
+<% end %>
+
 <%= form_for [post, comment], html: { class: "js-comment-form js-post-form"}, remote: true, authenticity_token: true do |f| %>
 
   <%= render "shared/errors", object: comment %>
