@@ -37,8 +37,10 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   config.middleware.insert_before Rack::Lock, Rack::LiveReload
-  # config.cache_store = :redis_store, "redis://turbolinks5blog.uo1oe7.0001.use1.cache.amazonaws.com:6379", { expires_in: 1.day }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # config.cache_store = :dalli_store, "", {:expires_in => 1.day, :compress => true}
+
 end

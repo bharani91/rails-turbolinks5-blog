@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.0.0.beta'
 gem 'kaminari'
 gem 'faker'
-gem "redis-rails"
+gem 'dalli'
 
 group :development, :test do
   gem 'byebug'
