@@ -9,12 +9,10 @@ gem 'turbolinks', '~> 5.0.0.beta'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'kaminari'
+gem 'faker'
 
-gem "rack-livereload", group: :development
-gem 'guard-livereload', '~> 2.5', require: false
 
 group :development, :test do
-  gem 'faker'
   gem 'byebug'
   gem 'guard-rspec'
   gem 'rspec-rails'
@@ -23,6 +21,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem "rack-livereload", group: :development
 end
 
 group :development do
