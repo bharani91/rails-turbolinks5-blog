@@ -1,14 +1,14 @@
 ## Rails + Turbolinks 5 + UJS
 
-A simple but fully AJAX blogging app built using Turbolinks 5 and UJS.
+A simple fully AJAX blogging app built using Turbolinks 5 and UJS. :rocket:
 
-- Using Turbolinks 5
+- Uses Turbolinks 5
 - All forms are submitted via AJAX (using remote: true)
 - Utilizes Caching (using etags & russian doll caching with cache digests)
 
-![Screenshot](./public/rails-turbolinks5-blog.gif)
+[![Screenshot](./public/rails-turbolinks5-blog.gif)](https://serene-ocean-28247.herokuapp.com/)
 
-##### [Demo](https://serene-ocean-28247.herokuapp.com/)
+#### [Demo](https://serene-ocean-28247.herokuapp.com/)
 
 ----------
 
