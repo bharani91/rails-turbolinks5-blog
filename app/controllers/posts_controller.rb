@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.page(params[:page])
-    fresh_when etag: @posts.pluck(:updated_at).max
+    fresh_when etag: @posts
   end
 
   def show
@@ -49,7 +49,13 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+
+    @redirect_path = posts_path
+
+    respond_to do |format|
+      format.html { redirect_to @redirect_path }
+      format.js
+    end
   end
 
 

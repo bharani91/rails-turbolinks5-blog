@@ -1,4 +1,4 @@
-$(document).on("ready", function() {
+jQuery(document).ready(function($) {
   var Loader = {
     add: function() {
       $("body").addClass("loading");
@@ -17,6 +17,4 @@ $(document).on("ready", function() {
 
   $(document).on("turbolinks:request-start", Loader.add);
   $(document).on("turbolinks:render", Loader.remove);
-
-
 });

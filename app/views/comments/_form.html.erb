@@ -18,7 +18,7 @@
 
 
     <% if defined? show_cancel  %>
-        <%= link_to "Cancel", cancel_editing_post_comment_path(post, comment), class: "js-cancel-comment", remote: true %>
+        <%= link_to "Cancel", "#", class: "js-cancel-editing", data: { original_content: "#{render 'comment', post: post, comment: comment}", parent_container: "#comment-#{comment.id}" } %>
     <% end %>
 
 

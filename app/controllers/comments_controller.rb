@@ -20,12 +20,6 @@ class CommentsController < ApplicationController
   def edit
   end
 
-  def cancel_editing
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def update
     respond_to do |format|
       if @comment.update(comment_params)
