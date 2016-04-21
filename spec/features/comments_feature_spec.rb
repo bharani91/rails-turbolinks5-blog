@@ -34,6 +34,21 @@ describe "comments" do
     end
   end
 
+
+  it "should allow cancelling changes", js: true do
+    comment = create(:comment, post: post)
+
+    visit post_path(post)
+
+    within("#comment-#{comment.id}") do
+      click_link "Edit"
+      expect(page).to have_css "textarea"
+
+      click_link "Cancel"
+      expect(page).to_not have_css "textarea"
+    end
+  end
+
 end
 
 

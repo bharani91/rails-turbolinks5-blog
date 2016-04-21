@@ -42,4 +42,39 @@ describe "posts" do
 
     expect(page).to have_content "New title"
   end
+
+  it "should delete a post" do
+
+    post = create(:post)
+
+    visit root_path
+    expect(page).to have_content post.title
+
+    click_link post.title
+
+    click_button "Delete"
+    expect(page.current_url).to match(/posts$/)
+    expect(page).to_not have_content post.title
+  end
+
+
+  it "should delete a post with js", js: true do
+
+    post = create(:post)
+
+    visit root_path
+    expect(page).to have_content post.title
+
+    click_link post.title
+
+    page.accept_confirm do
+      click_button "Delete"
+    end
+
+    sleep 0.1
+
+    expect(page).to_not have_content post.title
+    expect(page.current_url).to_not match /#{post.id}$/
+
+  end
 end

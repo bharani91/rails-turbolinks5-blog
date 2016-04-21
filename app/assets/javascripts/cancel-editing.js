@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load", function() {
+$(document).on("ready", function() {
   $(document).on("click", ".js-cancel-editing", function(e) {
     e.preventDefault();
     var originalContent = $($(this).data("original-content")).html();
